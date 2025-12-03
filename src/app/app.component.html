@@ -1,9 +1,26 @@
-<!-- Navigation bar -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <!-- Brand -->
-    <a class="navbar-brand" routerLink="/">Ananya Aggarwal</a>
+<!-- Sidebar toggle button for mobile -->
+<button class="sidebar-toggle d-lg-none" type="button" (click)="sidebarMenuOpen = true">
+  <span class="sidebar-toggle-icon"></span>
+</button>
 
+<!-- Sidebar overlay -->
+<div class="sidebar-menu-overlay d-lg-none" *ngIf="sidebarMenuOpen" (click)="sidebarMenuOpen = false"></div>
+
+<!-- Sidebar menu (right side) -->
+<nav class="sidebar-menu sidebar-menu-right d-lg-none" [class.open]="sidebarMenuOpen">
+  <button class="sidebar-menu-close" (click)="sidebarMenuOpen = false">&times;</button>
+  <ul class="sidebar-menu-list">
+    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="sidebarMenuOpen = false">Home</a></li>
+    <li><a routerLink="/about" routerLinkActive="active" (click)="sidebarMenuOpen = false">About</a></li>
+    <li><a routerLink="/projects" routerLinkActive="active" (click)="sidebarMenuOpen = false">Projects</a></li>
+    <li><a routerLink="/contact" routerLinkActive="active" (click)="sidebarMenuOpen = false">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Main navbar (desktop and large screens) -->
+<nav class="navbar navbar-expand-lg d-none d-lg-block">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">Ananya Aggarwal</a>
     <!-- Hamburger menu for mobile -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -36,4 +53,16 @@
 </nav>
 
 <!-- Router outlet for page content -->
-<router-outlet></router-outlet>
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footer">
+  <div class="footer-main">
+    <div class="footer-left">Ananya Aggarwal</div>
+    <div class="footer-right">
+      <a href="https://github.com/ananya39" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/ananya-a-077648201" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,135 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+}
+.contact-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.contact-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #008B8B;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.form-group label {
+  color: #222;
+  font-weight: 500;
+}
+.form-control {
+  padding: 0.7rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f9f9f9;
+  color: #222;
+  transition: border 0.2s;
+}
+.form-control:focus {
+  border-color: #008B8B;
+  outline: none;
+}
+.submit-btn {
+  background: #008B8B;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.submit-btn:disabled {
+  background: #b2dfdb;
+  cursor: not-allowed;
+}
+.submit-btn:hover:not(:disabled) {
+  background: #006666;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.social-links a {
+  color: #008B8B;
+  font-size: 2rem;
+  transition: color 0.2s;
+}
+.social-links a:hover {
+  color: #006666;
+}
+
+/* Dark mode styles */
+body.dark-mode .contact-container {
+  background: #23272f;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+body.dark-mode .contact-title {
+  color: #20B2AA;
+}
+body.dark-mode .form-group label {
+  color: #fff;
+}
+body.dark-mode .form-control {
+  background: #181c22;
+  color: #fff;
+  border: 1px solid #444;
+}
+body.dark-mode .form-control:focus {
+  border-color: #20B2AA;
+}
+body.dark-mode .submit-btn {
+  background: #20B2AA;
+  color: #222;
+}
+body.dark-mode .submit-btn:disabled {
+  background: #444;
+  color: #888;
+}
+body.dark-mode .submit-btn:hover:not(:disabled) {
+  background: #008B8B;
+  color: #fff;
+}
+body.dark-mode .social-links a {
+  color: #20B2AA;
+}
+body.dark-mode .social-links a:hover {
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 1rem 0.5rem;
+  }
+  .contact-title {
+    font-size: 1.3rem;
+  }
+  .social-links {
+    gap: 1rem;
+    font-size: 1.3rem;
+  }
+} 

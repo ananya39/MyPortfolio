@@ -1,0 +1,23 @@
+<div class="contact-container">
+  <h1 class="contact-title">Contact Me</h1>
+  <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" class="form-control" [(ngModel)]="name" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" class="form-control" [(ngModel)]="email" required />
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" class="form-control" rows="5" [(ngModel)]="message" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn" [disabled]="!contactForm.form.valid">Send Message</button>
+  </form>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/ananya-a-077648201" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    <a href="https://github.com/ananya39" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+    <a href="mailto:ananya20aggarwal@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+  </div>
+</div> 

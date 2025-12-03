@@ -11,6 +11,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   isDarkMode = false;
+  sidebarMenuOpen = false;
 
   ngOnInit() {
     // Check if user previously selected dark mode
